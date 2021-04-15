@@ -18,7 +18,7 @@ $stmt -> close();
 
 echo "<script>
 alert('Thank you so much for taking the time to leave us your honest review.');
-window.location.href='../index.html';
+window.location.href='../index.php';
 </script>";
 
 // header("Location: ../index.html"); 

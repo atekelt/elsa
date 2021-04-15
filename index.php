@@ -564,32 +564,70 @@
             <h2 class="mb-4">Customer Reviews</h2>
           </div>
         </div>
-        <div class="row ftco-animate justify-content-center">
-          <div class="col-md-12">
-            <div class="carousel-testimony owl-carousel ftco-owl">
-            
-				<div class="item">
-                <div class="testimony-wrap text-center pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text p-3">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Jason McClean</p>
-                    <span class="position">Customer</span>
+
+		<?php
+
+$sql = "SELECT * FROM customer_review";
+$result = $conn->query($sql);
+
+        echo "<div class='row ftco-animate justify-content-center'>";
+        echo "<div class='col-md-12'>";  
+        echo "<div class='carousel-testimony owl-carousel ftco-owl'>";    
+              
+		if($result -> num_rows > 0){
+			while($row = $result->fetch_assoc()){
+
+				echo "<div class='item'>";
+                echo "<div class='testimony-wrap text-center pb-5'>";
+                echo "<div class='user-img mb-4' style='background-image: url(images/elsa_logo_place_holder.jpg)'>";  
+                echo "<span class='quote d-flex align-items-center justify-content-center'>";    
+                echo "<i class='icon-quote-left'></i>";
+                echo "</span>";
+                echo "</div>";  
+                echo "<div class='text p-3'>";  
+                echo "<p class='mb-4'>".$row["review"]."</p>";    
+                echo "<p class='name'>".$row["full_name"]."</p>";    
+                echo "<span class='position'>Customer</span>";    
+                echo "</div>";  
+                echo "</div>";
+				echo "</div>";
+
+
+			}
+		}
+
+		else{
+			echo "<div class='item'>";
+                echo "<div class='testimony-wrap text-center pb-5'>";
+                echo "<div class='user-img mb-4' style='background-image: url(images/elsa_logo_place_holder.jpg)'>";  
+                echo "<span class='quote d-flex align-items-center justify-content-center'>";    
+                echo "<i class='icon-quote-left'></i>";
+                echo "</span>";
+                echo "</div>";  
+                echo "<div class='text p-3'>";      
+                echo "<p class='name'>Sorry; We Have Not Recieved Any Review Yet</p>";    
+                echo "<span class='position'></span>";    
+                echo "</div>";  
+                echo "</div>";
+				echo "</div>";
+		}
+				
+				
+			  
+
+				echo "</div>";    
+				echo "</div>"; 
+				echo "</div>";
+		?>
+      </div>
+	<div class="text-center">
+                  <div class="form-group">
+                    <a href="review.html"><input type="submit" value="I Want To Give A Review" class="btn btn-primary py-3 px-5"></a>
                   </div>
                 </div>
-              </div>
+	</section>
 
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-		
 		<section class="ftco-section ftco-no-pt ftco-no-pb">
 			<div class="container-fluid px-0">
 				<div class="row no-gutters">

@@ -92,60 +92,67 @@
 		          	<span class="subheading">Book a table</span>
 		            <h2 class="mb-4">Make Reservation</h2>
 		          </div>
-	            <form action="#">
-	              <div class="row">
-	                <div class="col-md-6">
-	                  <div class="form-group">
-	                    <label for="">Name</label>
-	                    <input type="text" class="form-control" placeholder="Your Name">
-	                  </div>
-	                </div>
-	                <div class="col-md-6">
-	                  <div class="form-group">
-	                    <label for="">Email</label>
-	                    <input type="text" class="form-control" placeholder="Your Email">
-	                  </div>
-	                </div>
-	                <div class="col-md-6">
-	                  <div class="form-group">
-	                    <label for="">Phone</label>
-	                    <input type="text" class="form-control" placeholder="Phone">
-	                  </div>
-	                </div>
-	                <div class="col-md-6">
-	                  <div class="form-group">
-	                    <label for="">Phone</label>
-	                    <input type="text" class="form-control" id="book_date" placeholder="Date">
-	                  </div>
-	                </div>
-	                <div class="col-md-6">
-	                  <div class="form-group">
-	                    <label for="">Time</label>
-	                    <input type="text" class="form-control" id="book_time" placeholder="Time">
-	                  </div>
-	                </div>
-	                <div class="col-md-6">
-	                  <div class="form-group">
-	                    <label for="">Person</label>
-	                    <div class="select-wrap one-third">
-	                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                      <select name="" id="" class="form-control">
-	                        <option value="">Person</option>
-	                        <option value="">1</option>
-	                        <option value="">2</option>
-	                        <option value="">3</option>
-	                        <option value="">4+</option>
-	                      </select>
-	                    </div>
-	                  </div>
-	                </div>
-	                <div class="col-md-12 mt-3">
-	                  <div class="form-group">
-	                    <input type="submit" value="Make a Reservation" class="btn btn-primary py-3 px-5">
-	                  </div>
-	                </div>
-	              </div>
-	            </form>
+				  <form action="php/reserve.php" method="POST">
+					<div class="row">
+					  <div class="col-md-6">
+						<div class="form-group">
+						  <label for="">First Name</label>
+						  <input type="text" class="form-control" placeholder="Your First Name" name="first_name" required>
+						</div>
+					  </div>
+					  <div class="col-md-6">
+						<div class="form-group">
+						  <label for="">Last Name</label>
+						  <input type="text" class="form-control" placeholder="Your Last Name" name="last_name" required>
+						</div>
+					  </div>
+					  <div class="col-md-6">
+						<div class="form-group">
+						  <label for="">Phone Number</label>
+						  <input type="tel" class="form-control" name="phone" placeholder="251-000-000-000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{3}" required>
+						</div>
+					  </div>
+					  <div class="col-md-6">
+						<div class="form-group">
+						  <label for="">Date Of Arrival</label>
+						  <input type="text" class="form-control" id="book_date" placeholder="Date" name="date_of_arrival" required>
+						</div>
+					  </div>
+					  <div class="col-md-6">
+						<div class="form-group">
+						  <label for="">Time Of Arrival</label>
+						  <input type="text" class="form-control" id="book_time" name="time_of_arrival" placeholder="Time" required>
+						</div>
+					  </div>
+					  <div class="col-md-6">
+						<div class="form-group">
+						  <label for="">E-mail</label>
+						  <input type="email" class="form-control" placeholder="e-mail" name="email" required>
+						</div>
+					  </div>
+					  <div class="col-md-6">
+						<div class="form-group">
+						  <label for="">Number Of Rooms</label>
+						  <div class="select-wrap one-third">
+							<div class="icon"><span class="ion-ios-arrow-down"></span></div>
+							<select name="rooms" id="" class="form-control">
+							  <option value="1">1</option>
+							  <option value="2">2</option>
+							  <option value="3">3</option>
+							  <option value="4">4</option>
+							  <option value="5">5</option>
+							  <option value="6">6</option>
+							</select>
+						  </div>
+						</div>
+					  </div>
+					  <div class="col-md-12 mt-3">
+						<div class="form-group">
+						  <input type="submit" value="Make a Reservation" class="btn btn-primary py-3 px-5">
+						</div>
+					  </div>
+					</div>
+				  </form>
 	          </div>
           </div>
           <div class="col-md-6 d-flex align-items-stretch pb-5 pb-md-0">
